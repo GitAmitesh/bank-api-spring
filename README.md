@@ -16,6 +16,17 @@ This is a RESTful API for managing bank accounts. It provides endpoints for crea
 - MySQL 8.3.0
 - Maven 3.13.0
 
+## Configuration
+
+Ensure that you have set up your MySQL database properly and updated the application.properties (or application.yml) file with the correct database credentials:
+
+```
+spring.datasource.url=jdbc:mysql://localhost:YOUR_PORT/YOUR_DATABASE
+spring.datasource.username=YOUR_USERNAME
+spring.datasource.password=YOUR_PASSWORD
+spring.jpa.hibernate.ddl-auto=update
+```
+
 ## Installation
 
 1. Clone the repository:
@@ -38,3 +49,21 @@ This is a RESTful API for managing bank accounts. It provides endpoints for crea
    ```bash
    java -jar target/bank-api-0.0.1-SNAPSHOT.jar
    ```
+
+## Endpoints
+The API provides the following endpoints for managing bank accounts:
+   - Create Account
+      - POST /accounts
+      - Request body: JSON payload with account details
+
+   - Get Account
+     - GET /accounts/{id}
+      - Retrieves account information by ID.
+
+   - Update Account
+      - PUT /accounts/{id}
+      - Updates the account information by ID.
+
+   - Delete Account
+      - DELETE /accounts/{id}
+      - Deletes an account by ID.
